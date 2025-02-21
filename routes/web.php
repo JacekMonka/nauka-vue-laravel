@@ -21,7 +21,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/permissions', [PermissionController::class, 'index'])
-    ->middleware(['auth', 'verified', 'can:access-permissions'])
+    ->middleware(['auth', 'verified', 'check.permissions'])
     ->name('permissions');
 
 Route::middleware('auth')->group(function () {

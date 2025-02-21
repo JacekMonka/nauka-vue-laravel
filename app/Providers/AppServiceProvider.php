@@ -24,8 +24,5 @@ class AppServiceProvider extends ServiceProvider
     {
         Vite::prefetch(concurrency: 3);
 
-        Gate::define('access-permissions', function (User $user) {
-            return $user->email === 'jacek9012@gmail.com';
-        });
     }
 }
